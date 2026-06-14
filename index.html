@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Gửi em ❤️</title>
+    <title>gửi em ❤️</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -139,84 +139,84 @@
 
         <!-- Screen 2 -->
         <div id="screen2" class="screen">
-            <h1 class="text-xl font-bold text-gray-800 mb-8 leading-relaxed">Đố em nhớ ngày đầu tiên mà mình bắt đầu nhắn tin với nhau 🤔</h1>
+            <h1 class="text-xl font-bold text-gray-800 mb-8 leading-relaxed">đố em nhớ ngày đầu tiên mà mình bắt đầu nhắn tin với nhau 🤔</h1>
             <div class="flex gap-3 justify-center mb-6">
                 <select id="day" class="flex-1 p-3 border-2 border-pink-100 rounded-xl bg-white text-gray-700 outline-none focus:border-pink-400 transition-colors font-semibold text-center cursor-pointer shadow-sm">
-                    <option value="" disabled selected>Ngày</option>
+                    <option value="" disabled selected>ngày</option>
                 </select>
                 <select id="month" class="flex-1 p-3 border-2 border-pink-100 rounded-xl bg-white text-gray-700 outline-none focus:border-pink-400 transition-colors font-semibold text-center cursor-pointer shadow-sm">
-                    <option value="" disabled selected>Tháng</option>
+                    <option value="" disabled selected>tháng</option>
                 </select>
                 <select id="year" class="flex-1 p-3 border-2 border-pink-100 rounded-xl bg-white text-gray-700 outline-none focus:border-pink-400 transition-colors font-semibold text-center cursor-pointer shadow-sm">
-                    <option value="" disabled selected>Năm</option>
+                    <option value="" disabled selected>năm</option>
                 </select>
             </div>
             <p id="dateMsg" class="text-[15px] font-bold h-6 mb-6"></p>
-            <button class="btn btn-primary w-full mb-3" onclick="checkDate()">Kiểm tra</button>
-            <button id="btnNextScreen2" class="btn btn-outline w-full hidden" onclick="nextScreen(2, 3)">Tiếp đi 👉</button>
+            <button class="btn btn-primary w-full mb-3" onclick="checkDate()">kiểm tra</button>
+            <button id="btnNextScreen2" class="btn btn-outline w-full hidden" onclick="nextScreen(2, 3)">tiếp đi 👉</button>
         </div>
 
         <!-- Screen 3 -->
         <div id="screen3" class="screen">
             <h1 class="text-3xl font-bold text-pink-500 mb-10">nhớ emmmm 🥺</h1>
             <div class="flex flex-col gap-8 text-gray-700 font-bold mb-12 text-lg flex-1 justify-center">
-                <p id="msg1" class="fade-text">Tình hình là...</p>
-                <p id="msg2" class="fade-text">Anh nhớ em quá tr rùi</p>
-                <p id="msg3" class="fade-text text-pink-600">Mình chuẩn bị kế hoạch đi chơi cho tuần sau đi chứ hả :3</p>
+                <p id="msg1" class="fade-text">tình hình là...</p>
+                <p id="msg2" class="fade-text">anh nhớ em quá tr rùi</p>
+                <p id="msg3" class="fade-text text-pink-600">mình chuẩn bị kế hoạch đi chơi cho tuần sau đi chứ hả :3</p>
             </div>
-            <button id="btnNextScreen3" class="btn btn-primary w-full opacity-0 pointer-events-none transition-all duration-500" onclick="nextScreen(3, 4)">Okeee ạ 🥰</button>
+            <button id="btnNextScreen3" class="btn btn-primary w-full opacity-0 pointer-events-none transition-all duration-500" onclick="nextScreen(3, 4)">okeee ạ 🥰</button>
         </div>
 
         <!-- Screen 4 -->
         <div id="screen4" class="screen">
             <h1 class="text-xl font-bold text-gray-800 mb-8">bạn nhỏ muốn ăn gì taaaa 🍲</h1>
             <div class="grid grid-cols-2 gap-4 mb-10 flex-1 content-center">
-                <button class="btn btn-outline p-4 rounded-2xl text-[15px] food-opt h-full flex flex-col items-center justify-center gap-2" onclick="selectOption('food', this, 'Đồ nướng')">
-                    <span class="text-2xl">🥩</span> Đồ nướng
+                <button class="btn btn-outline p-4 rounded-2xl text-[15px] food-opt h-full flex flex-col items-center justify-center gap-2" onclick="selectOption('food', this, 'đồ nướng')">
+                    <span class="text-2xl">🥩</span> đồ nướng
                 </button>
-                <button class="btn btn-outline p-4 rounded-2xl text-[15px] food-opt h-full flex flex-col items-center justify-center gap-2" onclick="selectOption('food', this, 'Lẩu')">
-                    <span class="text-2xl">🥘</span> Lẩu
+                <button class="btn btn-outline p-4 rounded-2xl text-[15px] food-opt h-full flex flex-col items-center justify-center gap-2" onclick="selectOption('food', this, 'lẩu')">
+                    <span class="text-2xl">🥘</span> lẩu
                 </button>
-                <button class="btn btn-outline p-4 rounded-2xl text-[15px] food-opt h-full flex flex-col items-center justify-center gap-2" onclick="selectOption('food', this, 'Ăn vặt bến Ninh Kiều')">
-                    <span class="text-2xl">🍢</span> Ăn vặt
+                <button class="btn btn-outline p-4 rounded-2xl text-[15px] food-opt h-full flex flex-col items-center justify-center gap-2" onclick="selectOption('food', this, 'ăn vặt bến ninh kiều')">
+                    <span class="text-2xl">🍢</span> ăn vặt
                 </button>
-                <button class="btn btn-outline p-4 rounded-2xl text-[15px] food-opt h-full flex flex-col items-center justify-center gap-2" onclick="selectOption('food', this, 'Một quán ngon trên Tiktok')">
-                    <span class="text-2xl">📱</span> Quán Tiktok
+                <button class="btn btn-outline p-4 rounded-2xl text-[15px] food-opt h-full flex flex-col items-center justify-center gap-2" onclick="selectOption('food', this, 'một quán ngon trên tiktok')">
+                    <span class="text-2xl">📱</span> quán tiktok
                 </button>
             </div>
-            <button id="btnNextScreen4" class="btn btn-primary w-full hidden" onclick="nextScreen(4, 5)">Tiếp tục 👉</button>
+            <button id="btnNextScreen4" class="btn btn-primary w-full hidden" onclick="nextScreen(4, 5)">tiếp tục 👉</button>
         </div>
 
         <!-- Screen 5 -->
         <div id="screen5" class="screen">
-            <h1 class="text-xl font-bold text-gray-800 mb-8 leading-relaxed">Ăn xong rồi thì mình đi đâu chơi tiếp nè 🛵</h1>
+            <h1 class="text-xl font-bold text-gray-800 mb-8 leading-relaxed">ăn xong rồi thì mình đi đâu chơi tiếp nè 🛵</h1>
             <div class="flex flex-col gap-4 mb-10 flex-1 justify-center">
-                <button class="btn btn-outline p-4 rounded-2xl activity-opt font-bold text-[15px] flex items-center justify-center gap-3" onclick="selectOption('activity', this, 'Xem phim')">
-                    <span class="text-xl">🎬</span> Xem phim
+                <button class="btn btn-outline p-4 rounded-2xl activity-opt font-bold text-[15px] flex items-center justify-center gap-3" onclick="selectOption('activity', this, 'xem phim')">
+                    <span class="text-xl">🎬</span> xem phim
                 </button>
-                <button class="btn btn-outline p-4 rounded-2xl activity-opt font-bold text-[15px] flex items-center justify-center gap-3" onclick="selectOption('activity', this, 'Đi dạo')">
-                    <span class="text-xl">🚶‍♀️</span> Đi dạo
+                <button class="btn btn-outline p-4 rounded-2xl activity-opt font-bold text-[15px] flex items-center justify-center gap-3" onclick="selectOption('activity', this, 'đi dạo')">
+                    <span class="text-xl">🚶‍♀️</span> đi dạo
                 </button>
-                <button class="btn btn-outline p-4 rounded-2xl activity-opt font-bold text-[15px] flex items-center justify-center gap-3" onclick="selectOption('activity', this, 'Lượn phố')">
-                    <span class="text-xl">🌃</span> Lượn phố
+                <button class="btn btn-outline p-4 rounded-2xl activity-opt font-bold text-[15px] flex items-center justify-center gap-3" onclick="selectOption('activity', this, 'lượn phố')">
+                    <span class="text-xl">🌃</span> lượn phố
                 </button>
             </div>
-            <button id="btnNextScreen5" class="btn btn-primary w-full hidden" onclick="nextScreen(5, 6)">Chốt đơn ✅</button>
+            <button id="btnNextScreen5" class="btn btn-primary w-full hidden" onclick="nextScreen(5, 6)">chốt đơn ✅</button>
         </div>
 
         <!-- Screen 6 -->
         <div id="screen6" class="screen">
-            <h1 class="text-2xl font-bold text-pink-600 mb-4">Chốt nhaaaaa! 🎉</h1>
-            <p class="text-gray-600 text-[15px] mb-8 font-medium px-2">Nhớ chụp màn hình này lại để anh biết kế hoạch tuần sau của mình nhe :3</p>
+            <h1 class="text-2xl font-bold text-pink-600 mb-4">chốt nhaaaaa! 🎉</h1>
+            <p class="text-gray-600 text-[15px] mb-8 font-medium px-2">nhớ chụp màn hình này lại để anh biết kế hoạch tuần sau của mình nhe :3</p>
             
             <div class="bg-pink-50/80 rounded-2xl p-6 mb-8 border border-pink-100 text-left relative overflow-hidden shadow-sm">
                 <div class="absolute -top-4 -right-4 w-20 h-20 bg-pink-200 rounded-full opacity-40 blur-md"></div>
                 <div class="mb-5 relative z-10">
-                    <span class="text-pink-400 text-xs uppercase tracking-wider font-bold">Món ăn</span>
+                    <span class="text-pink-400 text-xs tracking-wider font-bold">món ăn</span>
                     <p id="finalFood" class="text-xl font-bold text-gray-800 mt-1">-</p>
                 </div>
                 <div class="relative z-10">
-                    <span class="text-pink-400 text-xs uppercase tracking-wider font-bold">Hoạt động</span>
+                    <span class="text-pink-400 text-xs tracking-wider font-bold">hoạt động</span>
                     <p id="finalActivity" class="text-xl font-bold text-gray-800 mt-1">-</p>
                 </div>
             </div>
@@ -319,7 +319,7 @@
             const nextBtn = document.getElementById('btnNextScreen2');
             
             if (!d || !m || !y) {
-                msg.textContent = "Nhập đủ ngày tháng năm đi bae 🥺";
+                msg.textContent = "nhập đủ ngày tháng năm đi bae 🥺";
                 msg.className = "text-[15px] font-bold text-red-500 h-6 mb-6";
                 nextBtn.classList.add('hidden');
                 return;
