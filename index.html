@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>gửi em ❤️</title>
+    <title>gửi ni nèee</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
@@ -17,7 +18,8 @@
             justify-content: center;
             margin: 0;
             padding: 1rem;
-            overflow: hidden; /* Prevent scrolling on mobile */
+            overflow: hidden;
+            /* Prevent scrolling on mobile */
         }
 
         .card {
@@ -68,13 +70,16 @@
         }
 
         .btn-primary {
-            background: #ec4899; /* Pink-500 */
+            background: #ec4899;
+            /* Pink-500 */
             color: white;
             box-shadow: 0 6px 15px rgba(236, 72, 153, 0.3);
         }
 
-        .btn-primary:hover, .btn-primary:active {
-            background: #db2777; /* Pink-600 */
+        .btn-primary:hover,
+        .btn-primary:active {
+            background: #db2777;
+            /* Pink-600 */
             transform: translateY(-2px);
             box-shadow: 0 8px 20px rgba(236, 72, 153, 0.4);
         }
@@ -85,7 +90,8 @@
         }
 
         .btn-outline {
-            border: 2px solid #fbcfe8; /* Pink-200 */
+            border: 2px solid #fbcfe8;
+            /* Pink-200 */
             color: #db2777;
             background: white;
         }
@@ -124,6 +130,7 @@
         }
     </style>
 </head>
+
 <body>
 
     <div class="card" id="mainCard">
@@ -139,77 +146,104 @@
 
         <!-- Screen 2 -->
         <div id="screen2" class="screen">
-            <h1 class="text-xl font-bold text-gray-800 mb-8 leading-relaxed">đố em nhớ ngày đầu tiên mà mình bắt đầu nhắn tin với nhau 🤔</h1>
+            <h1 class="text-xl font-bold text-gray-800 mb-8 leading-relaxed">đố em nhớ ngày đầu tiên mà mình bắt đầu
+                nhắn tin với nhau 🤔</h1>
             <div class="flex gap-3 justify-center mb-6">
-                <select id="day" class="flex-1 p-3 border-2 border-pink-100 rounded-xl bg-white text-gray-700 outline-none focus:border-pink-400 transition-colors font-semibold text-center cursor-pointer shadow-sm">
+                <select id="day"
+                    class="flex-1 p-3 border-2 border-pink-100 rounded-xl bg-white text-gray-700 outline-none focus:border-pink-400 transition-colors font-semibold text-center cursor-pointer shadow-sm">
                     <option value="" disabled selected>ngày</option>
                 </select>
-                <select id="month" class="flex-1 p-3 border-2 border-pink-100 rounded-xl bg-white text-gray-700 outline-none focus:border-pink-400 transition-colors font-semibold text-center cursor-pointer shadow-sm">
+                <select id="month"
+                    class="flex-1 p-3 border-2 border-pink-100 rounded-xl bg-white text-gray-700 outline-none focus:border-pink-400 transition-colors font-semibold text-center cursor-pointer shadow-sm">
                     <option value="" disabled selected>tháng</option>
                 </select>
-                <select id="year" class="flex-1 p-3 border-2 border-pink-100 rounded-xl bg-white text-gray-700 outline-none focus:border-pink-400 transition-colors font-semibold text-center cursor-pointer shadow-sm">
+                <select id="year"
+                    class="flex-1 p-3 border-2 border-pink-100 rounded-xl bg-white text-gray-700 outline-none focus:border-pink-400 transition-colors font-semibold text-center cursor-pointer shadow-sm">
                     <option value="" disabled selected>năm</option>
                 </select>
             </div>
             <p id="dateMsg" class="text-[15px] font-bold h-6 mb-6"></p>
             <button class="btn btn-primary w-full mb-3" onclick="checkDate()">kiểm tra</button>
-            <button id="btnNextScreen2" class="btn btn-outline w-full hidden" onclick="nextScreen(2, 3)">tiếp đi 👉</button>
+            <button id="btnNextScreen2" class="btn btn-outline w-full hidden" onclick="nextScreen(2, 3)">tiếp đi
+                👉</button>
         </div>
 
         <!-- Screen 3 -->
         <div id="screen3" class="screen">
-            <h1 class="text-3xl font-bold text-pink-500 mb-10">nhớ emmmm 🥺</h1>
+            <h1 class="text-3xl font-bold text-pink-500 mb-10">nhớ emmmm🥺</h1>
             <div class="flex flex-col gap-8 text-gray-700 font-bold mb-12 text-lg flex-1 justify-center">
                 <p id="msg1" class="fade-text">tình hình là...</p>
                 <p id="msg2" class="fade-text">anh nhớ em quá tr rùi</p>
-                <p id="msg3" class="fade-text text-pink-600">mình chuẩn bị kế hoạch đi chơi cho tuần sau đi chứ hả :3</p>
+                <p id="msg3" class="fade-text text-pink-600">mình chuẩn bị kế hoạch đi chơi cho tuần sau đi chứ hả :3
+                </p>
             </div>
-            <button id="btnNextScreen3" class="btn btn-primary w-full opacity-0 pointer-events-none transition-all duration-500" onclick="nextScreen(3, 4)">okeee ạ 🥰</button>
+            <button id="btnNextScreen3"
+                class="btn btn-primary w-full opacity-0 pointer-events-none transition-all duration-500"
+                onclick="nextScreen(3, 4)">yassss </button>
         </div>
 
         <!-- Screen 4 -->
         <div id="screen4" class="screen">
             <h1 class="text-xl font-bold text-gray-800 mb-8">bạn nhỏ muốn ăn gì taaaa 🍲</h1>
             <div class="grid grid-cols-2 gap-4 mb-10 flex-1 content-center">
-                <button class="btn btn-outline p-4 rounded-2xl text-[15px] food-opt h-full flex flex-col items-center justify-center gap-2" onclick="selectOption('food', this, 'đồ nướng')">
+                <button
+                    class="btn btn-outline p-4 rounded-2xl text-[15px] food-opt h-full flex flex-col items-center justify-center gap-2"
+                    onclick="selectOption('food', this, 'đồ nướng')">
                     <span class="text-2xl">🥩</span> đồ nướng
                 </button>
-                <button class="btn btn-outline p-4 rounded-2xl text-[15px] food-opt h-full flex flex-col items-center justify-center gap-2" onclick="selectOption('food', this, 'lẩu')">
+                <button
+                    class="btn btn-outline p-4 rounded-2xl text-[15px] food-opt h-full flex flex-col items-center justify-center gap-2"
+                    onclick="selectOption('food', this, 'lẩu')">
                     <span class="text-2xl">🥘</span> lẩu
                 </button>
-                <button class="btn btn-outline p-4 rounded-2xl text-[15px] food-opt h-full flex flex-col items-center justify-center gap-2" onclick="selectOption('food', this, 'ăn vặt bến ninh kiều')">
+                <button
+                    class="btn btn-outline p-4 rounded-2xl text-[15px] food-opt h-full flex flex-col items-center justify-center gap-2"
+                    onclick="selectOption('food', this, 'ăn vặt bến ninh kiều')">
                     <span class="text-2xl">🍢</span> ăn vặt
                 </button>
-                <button class="btn btn-outline p-4 rounded-2xl text-[15px] food-opt h-full flex flex-col items-center justify-center gap-2" onclick="selectOption('food', this, 'một quán ngon trên tiktok')">
+                <button
+                    class="btn btn-outline p-4 rounded-2xl text-[15px] food-opt h-full flex flex-col items-center justify-center gap-2"
+                    onclick="selectOption('food', this, 'một quán ngon trên tiktok')">
                     <span class="text-2xl">📱</span> quán tiktok
                 </button>
             </div>
-            <button id="btnNextScreen4" class="btn btn-primary w-full hidden" onclick="nextScreen(4, 5)">tiếp tục 👉</button>
+            <button id="btnNextScreen4" class="btn btn-primary w-full hidden" onclick="nextScreen(4, 5)">tiếp tục
+                👉</button>
         </div>
 
         <!-- Screen 5 -->
         <div id="screen5" class="screen">
-            <h1 class="text-xl font-bold text-gray-800 mb-8 leading-relaxed">ăn xong rồi thì mình đi đâu chơi tiếp nè 🛵</h1>
+            <h1 class="text-xl font-bold text-gray-800 mb-8 leading-relaxed">ăn xong rồi thì mình đi đâu chơi tiếp nè 🛵
+            </h1>
             <div class="flex flex-col gap-4 mb-10 flex-1 justify-center">
-                <button class="btn btn-outline p-4 rounded-2xl activity-opt font-bold text-[15px] flex items-center justify-center gap-3" onclick="selectOption('activity', this, 'xem phim')">
+                <button
+                    class="btn btn-outline p-4 rounded-2xl activity-opt font-bold text-[15px] flex items-center justify-center gap-3"
+                    onclick="selectOption('activity', this, 'xem phim')">
                     <span class="text-xl">🎬</span> xem phim
                 </button>
-                <button class="btn btn-outline p-4 rounded-2xl activity-opt font-bold text-[15px] flex items-center justify-center gap-3" onclick="selectOption('activity', this, 'đi dạo')">
+                <button
+                    class="btn btn-outline p-4 rounded-2xl activity-opt font-bold text-[15px] flex items-center justify-center gap-3"
+                    onclick="selectOption('activity', this, 'đi dạo')">
                     <span class="text-xl">🚶‍♀️</span> đi dạo
                 </button>
-                <button class="btn btn-outline p-4 rounded-2xl activity-opt font-bold text-[15px] flex items-center justify-center gap-3" onclick="selectOption('activity', this, 'lượn phố')">
+                <button
+                    class="btn btn-outline p-4 rounded-2xl activity-opt font-bold text-[15px] flex items-center justify-center gap-3"
+                    onclick="selectOption('activity', this, 'lượn phố')">
                     <span class="text-xl">🌃</span> lượn phố
                 </button>
             </div>
-            <button id="btnNextScreen5" class="btn btn-primary w-full hidden" onclick="nextScreen(5, 6)">chốt đơn ✅</button>
+            <button id="btnNextScreen5" class="btn btn-primary w-full hidden" onclick="nextScreen(5, 6)">chốt đơn
+            </button>
         </div>
 
         <!-- Screen 6 -->
         <div id="screen6" class="screen">
-            <h1 class="text-2xl font-bold text-pink-600 mb-4">chốt nhaaaaa! 🎉</h1>
-            <p class="text-gray-600 text-[15px] mb-8 font-medium px-2">nhớ chụp màn hình này lại để anh biết kế hoạch tuần sau của mình nhe :3</p>
-            
-            <div class="bg-pink-50/80 rounded-2xl p-6 mb-8 border border-pink-100 text-left relative overflow-hidden shadow-sm">
+            <h1 class="text-2xl font-bold text-pink-600 mb-4">chốt nhaaaaa!</h1>
+            <p class="text-gray-600 text-[15px] mb-8 font-medium px-2">nhớ chụp màn hình này lại để anh biết kế hoạch
+                tuần sau của mình nhe :3</p>
+
+            <div
+                class="bg-pink-50/80 rounded-2xl p-6 mb-8 border border-pink-100 text-left relative overflow-hidden shadow-sm">
                 <div class="absolute -top-4 -right-4 w-20 h-20 bg-pink-200 rounded-full opacity-40 blur-md"></div>
                 <div class="mb-5 relative z-10">
                     <span class="text-pink-400 text-xs tracking-wider font-bold">món ăn</span>
@@ -220,7 +254,8 @@
                     <p id="finalActivity" class="text-xl font-bold text-gray-800 mt-1">-</p>
                 </div>
             </div>
-            <img src="./kitty kiss GIF.gif" alt="Happy GIF" class="w-44 h-44 object-cover mx-auto rounded-2xl shadow-sm">
+            <img src="./kitty kiss GIF.gif" alt="Happy GIF"
+                class="w-44 h-44 object-cover mx-auto rounded-2xl shadow-sm">
         </div>
     </div>
 
@@ -229,26 +264,26 @@
         function nextScreen(currentId, nextId) {
             const current = document.getElementById(`screen${currentId}`);
             const next = document.getElementById(`screen${nextId}`);
-            
+
             current.classList.remove('visible');
-            
+
             setTimeout(() => {
                 current.classList.remove('active');
                 next.classList.add('active');
-                
+
                 // Force reflow
                 void next.offsetWidth;
-                
+
                 next.classList.add('visible');
-                
-                if(nextId === 3) initScreen3();
-                if(nextId === 6) initScreen6();
+
+                if (nextId === 3) initScreen3();
+                if (nextId === 6) initScreen6();
             }, 400); // Wait for fade-out animation to complete
         }
 
         // Screen 1: Evading Button Logic
         const btnNo = document.getElementById('btnNo');
-        
+
         let originX = 0;
         let originY = 0;
         let isFirstHover = true;
@@ -286,7 +321,7 @@
 
         // Attach events for both Desktop and Mobile
         btnNo.addEventListener('mouseover', moveBtn);
-        btnNo.addEventListener('touchstart', function(e) {
+        btnNo.addEventListener('touchstart', function (e) {
             e.preventDefault(); // Prevent standard touch action
             moveBtn();
         });
@@ -294,17 +329,17 @@
         // Screen 2: Date Selection Logic
         window.onload = () => {
             const daySelect = document.getElementById('day');
-            for(let i = 1; i <= 31; i++) {
+            for (let i = 1; i <= 31; i++) {
                 daySelect.innerHTML += `<option value="${i}">${i}</option>`;
             }
 
             const monthSelect = document.getElementById('month');
-            for(let i = 1; i <= 12; i++) {
+            for (let i = 1; i <= 12; i++) {
                 monthSelect.innerHTML += `<option value="${i}">${i}</option>`;
             }
 
             const yearSelect = document.getElementById('year');
-            for(let i = 2020; i <= 2026; i++) {
+            for (let i = 2020; i <= 2026; i++) {
                 yearSelect.innerHTML += `<option value="${i}">${i}</option>`;
             }
         };
@@ -313,10 +348,10 @@
             const d = document.getElementById('day').value;
             const m = document.getElementById('month').value;
             const y = document.getElementById('year').value;
-            
+
             const msg = document.getElementById('dateMsg');
             const nextBtn = document.getElementById('btnNextScreen2');
-            
+
             if (!d || !m || !y) {
                 msg.textContent = "nhập đủ ngày tháng năm đi bae 🥺";
                 msg.className = "text-[15px] font-bold text-red-500 h-6 mb-6";
@@ -325,8 +360,8 @@
             }
 
             // Target Date: 6/2/2026
-            if(d === "6" && m === "2" && y === "2026") {
-                msg.textContent = "em giỏi théeee 🥰";
+            if (d === "6" && m === "2" && y === "2026") {
+                msg.textContent = "em giỏi théeee :3";
                 msg.className = "text-[15px] font-bold text-green-500 h-6 mb-6";
                 nextBtn.classList.remove('hidden');
             } else {
@@ -341,7 +376,7 @@
             setTimeout(() => document.getElementById('msg1').classList.add('visible'), 500);
             setTimeout(() => document.getElementById('msg2').classList.add('visible'), 2000);
             setTimeout(() => document.getElementById('msg3').classList.add('visible'), 3500);
-            
+
             setTimeout(() => {
                 const btn = document.getElementById('btnNextScreen3');
                 btn.classList.remove('pointer-events-none');
@@ -356,18 +391,18 @@
         function selectOption(type, btnElement, value) {
             const buttons = document.querySelectorAll(`.${type}-opt`);
             buttons.forEach(btn => btn.classList.remove('selected'));
-            
+
             btnElement.classList.add('selected');
-            
-            if(type === 'food') {
+
+            if (type === 'food') {
                 selectedFood = value;
                 const nextBtn = document.getElementById('btnNextScreen4');
                 nextBtn.classList.remove('hidden');
-                
+
                 // Add a subtle bounce animation to attract attention
                 nextBtn.classList.add('animate-bounce');
                 setTimeout(() => nextBtn.classList.remove('animate-bounce'), 1000);
-            } else if(type === 'activity') {
+            } else if (type === 'activity') {
                 selectedActivity = value;
                 const nextBtn = document.getElementById('btnNextScreen5');
                 nextBtn.classList.remove('hidden');
@@ -381,4 +416,5 @@
         }
     </script>
 </body>
+
 </html>
