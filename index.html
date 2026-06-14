@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Gửi em ❤️</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Quicksand', sans-serif;
+            /* Background gradient: soft warm colors reflecting romance and slight melancholy */
+            background: linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 1rem;
+            overflow: hidden; /* Prevent scrolling on mobile */
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border-radius: 28px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            position: relative;
+            min-height: 480px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .screen {
+            display: none;
+            flex-direction: column;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+            width: 100%;
+            flex: 1;
+            justify-content: center;
+        }
+
+        .screen.active {
+            display: flex;
+        }
+
+        .screen.visible {
+            opacity: 1;
+        }
+
+        .btn {
+            padding: 0.85rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+            outline: none;
+            font-size: 1rem;
+            user-select: none;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        .btn-primary {
+            background: #ec4899; /* Pink-500 */
+            color: white;
+            box-shadow: 0 6px 15px rgba(236, 72, 153, 0.3);
+        }
+
+        .btn-primary:hover, .btn-primary:active {
+            background: #db2777; /* Pink-600 */
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(236, 72, 153, 0.4);
+        }
+
+        .btn-secondary {
+            background: #f3f4f6;
+            color: #4b5563;
+        }
+
+        .btn-outline {
+            border: 2px solid #fbcfe8; /* Pink-200 */
+            color: #db2777;
+            background: white;
+        }
+
+        .btn-outline.selected {
+            background: #ec4899;
+            color: white;
+            border-color: #ec4899;
+            box-shadow: 0 6px 15px rgba(236, 72, 153, 0.3);
+            transform: scale(1.03);
+        }
+
+        #btnNo {
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            z-index: 50;
+        }
+
+        .fade-text {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+
+        .fade-text.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        select {
+            -webkit-appearance: none;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 1em;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card" id="mainCard">
+        <!-- Screen 1 -->
+        <div id="screen1" class="screen active visible">
+            <h1 class="text-xl font-bold text-gray-800 mb-6">hnay hơi bùn nên anh làm cái này</h1>
+            <img src="./hinh_em.jpg" alt="Cute Cat" class="w-44 h-44 object-cover mx-auto rounded-2xl mb-8 shadow-sm">
+            <div class="flex justify-center gap-4 relative w-full h-12" id="btnContainer">
+                <button id="btnYes" class="btn btn-primary flex-1" onclick="nextScreen(1, 2)">sao dạaa</button>
+                <button id="btnNo" class="btn btn-secondary flex-1">kệ anhhh</button>
+            </div>
+        </div>
+
+        <!-- Screen 2 -->
+        <div id="screen2" class="screen">
+            <h1 class="text-xl font-bold text-gray-800 mb-8 leading-relaxed">Đố em nhớ ngày đầu tiên mà mình bắt đầu nhắn tin với nhau 🤔</h1>
+            <div class="flex gap-3 justify-center mb-6">
+                <select id="day" class="flex-1 p-3 border-2 border-pink-100 rounded-xl bg-white text-gray-700 outline-none focus:border-pink-400 transition-colors font-semibold text-center cursor-pointer shadow-sm">
+                    <option value="" disabled selected>Ngày</option>
+                </select>
+                <select id="month" class="flex-1 p-3 border-2 border-pink-100 rounded-xl bg-white text-gray-700 outline-none focus:border-pink-400 transition-colors font-semibold text-center cursor-pointer shadow-sm">
+                    <option value="" disabled selected>Tháng</option>
+                </select>
+                <select id="year" class="flex-1 p-3 border-2 border-pink-100 rounded-xl bg-white text-gray-700 outline-none focus:border-pink-400 transition-colors font-semibold text-center cursor-pointer shadow-sm">
+                    <option value="" disabled selected>Năm</option>
+                </select>
+            </div>
+            <p id="dateMsg" class="text-[15px] font-bold h-6 mb-6"></p>
+            <button class="btn btn-primary w-full mb-3" onclick="checkDate()">Kiểm tra</button>
+            <button id="btnNextScreen2" class="btn btn-outline w-full hidden" onclick="nextScreen(2, 3)">Tiếp đi 👉</button>
+        </div>
+
+        <!-- Screen 3 -->
+        <div id="screen3" class="screen">
+            <h1 class="text-3xl font-bold text-pink-500 mb-10">nhớ emmmm 🥺</h1>
+            <div class="flex flex-col gap-8 text-gray-700 font-bold mb-12 text-lg flex-1 justify-center">
+                <p id="msg1" class="fade-text">Tình hình là...</p>
+                <p id="msg2" class="fade-text">Anh nhớ em quá tr rùi</p>
+                <p id="msg3" class="fade-text text-pink-600">Mình chuẩn bị kế hoạch đi chơi cho tuần sau đi chứ hả :3</p>
+            </div>
+            <button id="btnNextScreen3" class="btn btn-primary w-full opacity-0 pointer-events-none transition-all duration-500" onclick="nextScreen(3, 4)">Okeee ạ 🥰</button>
+        </div>
+
+        <!-- Screen 4 -->
+        <div id="screen4" class="screen">
+            <h1 class="text-xl font-bold text-gray-800 mb-8">bạn nhỏ muốn ăn gì taaaa 🍲</h1>
+            <div class="grid grid-cols-2 gap-4 mb-10 flex-1 content-center">
+                <button class="btn btn-outline p-4 rounded-2xl text-[15px] food-opt h-full flex flex-col items-center justify-center gap-2" onclick="selectOption('food', this, 'Đồ nướng')">
+                    <span class="text-2xl">🥩</span> Đồ nướng
+                </button>
+                <button class="btn btn-outline p-4 rounded-2xl text-[15px] food-opt h-full flex flex-col items-center justify-center gap-2" onclick="selectOption('food', this, 'Lẩu')">
+                    <span class="text-2xl">🥘</span> Lẩu
+                </button>
+                <button class="btn btn-outline p-4 rounded-2xl text-[15px] food-opt h-full flex flex-col items-center justify-center gap-2" onclick="selectOption('food', this, 'Ăn vặt bến Ninh Kiều')">
+                    <span class="text-2xl">🍢</span> Ăn vặt
+                </button>
+                <button class="btn btn-outline p-4 rounded-2xl text-[15px] food-opt h-full flex flex-col items-center justify-center gap-2" onclick="selectOption('food', this, 'Một quán ngon trên Tiktok')">
+                    <span class="text-2xl">📱</span> Quán Tiktok
+                </button>
+            </div>
+            <button id="btnNextScreen4" class="btn btn-primary w-full hidden" onclick="nextScreen(4, 5)">Tiếp tục 👉</button>
+        </div>
+
+        <!-- Screen 5 -->
+        <div id="screen5" class="screen">
+            <h1 class="text-xl font-bold text-gray-800 mb-8 leading-relaxed">Ăn xong rồi thì mình đi đâu chơi tiếp nè 🛵</h1>
+            <div class="flex flex-col gap-4 mb-10 flex-1 justify-center">
+                <button class="btn btn-outline p-4 rounded-2xl activity-opt font-bold text-[15px] flex items-center justify-center gap-3" onclick="selectOption('activity', this, 'Xem phim')">
+                    <span class="text-xl">🎬</span> Xem phim
+                </button>
+                <button class="btn btn-outline p-4 rounded-2xl activity-opt font-bold text-[15px] flex items-center justify-center gap-3" onclick="selectOption('activity', this, 'Đi dạo')">
+                    <span class="text-xl">🚶‍♀️</span> Đi dạo
+                </button>
+                <button class="btn btn-outline p-4 rounded-2xl activity-opt font-bold text-[15px] flex items-center justify-center gap-3" onclick="selectOption('activity', this, 'Lượn phố')">
+                    <span class="text-xl">🌃</span> Lượn phố
+                </button>
+            </div>
+            <button id="btnNextScreen5" class="btn btn-primary w-full hidden" onclick="nextScreen(5, 6)">Chốt đơn ✅</button>
+        </div>
+
+        <!-- Screen 6 -->
+        <div id="screen6" class="screen">
+            <h1 class="text-2xl font-bold text-pink-600 mb-4">Chốt nhaaaaa! 🎉</h1>
+            <p class="text-gray-600 text-[15px] mb-8 font-medium px-2">Nhớ chụp màn hình này lại để anh biết kế hoạch tuần sau của mình nhe :3</p>
+            
+            <div class="bg-pink-50/80 rounded-2xl p-6 mb-8 border border-pink-100 text-left relative overflow-hidden shadow-sm">
+                <div class="absolute -top-4 -right-4 w-20 h-20 bg-pink-200 rounded-full opacity-40 blur-md"></div>
+                <div class="mb-5 relative z-10">
+                    <span class="text-pink-400 text-xs uppercase tracking-wider font-bold">Món ăn</span>
+                    <p id="finalFood" class="text-xl font-bold text-gray-800 mt-1">-</p>
+                </div>
+                <div class="relative z-10">
+                    <span class="text-pink-400 text-xs uppercase tracking-wider font-bold">Hoạt động</span>
+                    <p id="finalActivity" class="text-xl font-bold text-gray-800 mt-1">-</p>
+                </div>
+            </div>
+            
+            <img src="https://media1.tenor.com/m/bK1qz1cbW0AAAAAC/tkthao219-bubududu.gif" alt="Happy GIF" class="w-44 h-44 object-cover mx-auto rounded-2xl shadow-sm">
+        </div>
+    </div>
+
+    <script>
+        // Transition Logic
+        function nextScreen(currentId, nextId) {
+            const current = document.getElementById(`screen${currentId}`);
+            const next = document.getElementById(`screen${nextId}`);
+            
+            current.classList.remove('visible');
+            
+            setTimeout(() => {
+                current.classList.remove('active');
+                next.classList.add('active');
+                
+                // Force reflow
+                void next.offsetWidth;
+                
+                next.classList.add('visible');
+                
+                if(nextId === 3) initScreen3();
+                if(nextId === 6) initScreen6();
+            }, 400); // Wait for fade-out animation to complete
+        }
+
+        // Screen 1: Evading Button Logic
+        const btnNo = document.getElementById('btnNo');
+        
+        let originX = 0;
+        let originY = 0;
+        let isFirstHover = true;
+
+        function moveBtn() {
+            // Lấy kích thước nút và màn hình
+            const btnWidth = btnNo.offsetWidth;
+            const btnHeight = btnNo.offsetHeight;
+            const windowWidth = window.innerWidth;
+            const windowHeight = window.innerHeight;
+
+            if (isFirstHover) {
+                // Lưu lại vị trí gốc ban đầu của nút trên màn hình
+                const rect = btnNo.getBoundingClientRect();
+                originX = rect.left;
+                originY = rect.top;
+                isFirstHover = false;
+            }
+
+            // Tính toán vị trí ngẫu nhiên trên toàn màn hình (có padding để không dính sát viền)
+            const safePadding = 20;
+            const maxX = windowWidth - btnWidth - safePadding;
+            const maxY = windowHeight - btnHeight - safePadding;
+
+            const randomX = Math.max(safePadding, Math.random() * maxX);
+            const randomY = Math.max(safePadding, Math.random() * maxY);
+
+            // Tính toán khoảng cách cần dịch chuyển so với vị trí gốc
+            const translateX = randomX - originX;
+            const translateY = randomY - originY;
+
+            // Dùng transform: translate để dịch chuyển
+            btnNo.style.transform = `translate(${translateX}px, ${translateY}px)`;
+        }
+
+        // Attach events for both Desktop and Mobile
+        btnNo.addEventListener('mouseover', moveBtn);
+        btnNo.addEventListener('touchstart', function(e) {
+            e.preventDefault(); // Prevent standard touch action
+            moveBtn();
+        });
+
+        // Screen 2: Date Selection Logic
+        window.onload = () => {
+            const daySelect = document.getElementById('day');
+            for(let i = 1; i <= 31; i++) {
+                daySelect.innerHTML += `<option value="${i}">${i}</option>`;
+            }
+
+            const monthSelect = document.getElementById('month');
+            for(let i = 1; i <= 12; i++) {
+                monthSelect.innerHTML += `<option value="${i}">${i}</option>`;
+            }
+
+            const yearSelect = document.getElementById('year');
+            for(let i = 2020; i <= 2026; i++) {
+                yearSelect.innerHTML += `<option value="${i}">${i}</option>`;
+            }
+        };
+
+        function checkDate() {
+            const d = document.getElementById('day').value;
+            const m = document.getElementById('month').value;
+            const y = document.getElementById('year').value;
+            
+            const msg = document.getElementById('dateMsg');
+            const nextBtn = document.getElementById('btnNextScreen2');
+            
+            if (!d || !m || !y) {
+                msg.textContent = "Nhập đủ ngày tháng năm đi bae 🥺";
+                msg.className = "text-[15px] font-bold text-red-500 h-6 mb-6";
+                nextBtn.classList.add('hidden');
+                return;
+            }
+
+            // Target Date: 6/2/2026
+            if(d === "6" && m === "2" && y === "2026") {
+                msg.textContent = "em giỏi théeee 🥰";
+                msg.className = "text-[15px] font-bold text-green-500 h-6 mb-6";
+                nextBtn.classList.remove('hidden');
+            } else {
+                msg.textContent = "em hong nhớ thiệt saooo :<";
+                msg.className = "text-[15px] font-bold text-red-500 h-6 mb-6";
+                nextBtn.classList.add('hidden');
+            }
+        }
+
+        // Screen 3: Confession Fade-in Effect
+        function initScreen3() {
+            setTimeout(() => document.getElementById('msg1').classList.add('visible'), 500);
+            setTimeout(() => document.getElementById('msg2').classList.add('visible'), 2000);
+            setTimeout(() => document.getElementById('msg3').classList.add('visible'), 3500);
+            
+            setTimeout(() => {
+                const btn = document.getElementById('btnNextScreen3');
+                btn.classList.remove('pointer-events-none');
+                btn.classList.remove('opacity-0');
+            }, 4800);
+        }
+
+        // Screen 4 & 5: Option Selection Logic
+        let selectedFood = "";
+        let selectedActivity = "";
+
+        function selectOption(type, btnElement, value) {
+            const buttons = document.querySelectorAll(`.${type}-opt`);
+            buttons.forEach(btn => btn.classList.remove('selected'));
+            
+            btnElement.classList.add('selected');
+            
+            if(type === 'food') {
+                selectedFood = value;
+                const nextBtn = document.getElementById('btnNextScreen4');
+                nextBtn.classList.remove('hidden');
+                
+                // Add a subtle bounce animation to attract attention
+                nextBtn.classList.add('animate-bounce');
+                setTimeout(() => nextBtn.classList.remove('animate-bounce'), 1000);
+            } else if(type === 'activity') {
+                selectedActivity = value;
+                const nextBtn = document.getElementById('btnNextScreen5');
+                nextBtn.classList.remove('hidden');
+            }
+        }
+
+        // Screen 6: Finalize & Display Summary
+        function initScreen6() {
+            document.getElementById('finalFood').textContent = selectedFood;
+            document.getElementById('finalActivity').textContent = selectedActivity;
+        }
+    </script>
+</body>
+</html>
