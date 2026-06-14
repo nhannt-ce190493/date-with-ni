@@ -147,7 +147,7 @@
         <!-- Screen 2 -->
         <div id="screen2" class="screen">
             <h1 class="text-xl font-bold text-gray-800 mb-8 leading-relaxed">đố em nhớ ngày đầu tiên mà mình bắt đầu
-                nhắn tin với nhau 🤔</h1>
+                nhắn tin với nhau </h1>
             <div class="flex gap-3 justify-center mb-6">
                 <select id="day"
                     class="flex-1 p-3 border-2 border-pink-100 rounded-xl bg-white text-gray-700 outline-none focus:border-pink-400 transition-colors font-semibold text-center cursor-pointer shadow-sm">
@@ -165,7 +165,7 @@
             <p id="dateMsg" class="text-[15px] font-bold h-6 mb-6"></p>
             <button class="btn btn-primary w-full mb-3" onclick="checkDate()">kiểm tra</button>
             <button id="btnNextScreen2" class="btn btn-outline w-full hidden" onclick="nextScreen(2, 3)">tiếp đi
-                👉</button>
+            </button>
         </div>
 
         <!-- Screen 3 -->
@@ -184,7 +184,7 @@
 
         <!-- Screen 4 -->
         <div id="screen4" class="screen">
-            <h1 class="text-xl font-bold text-gray-800 mb-8">bạn nhỏ muốn ăn gì taaaa 🍲</h1>
+            <h1 class="text-xl font-bold text-gray-800 mb-8">bạn nhỏ muốn ăn gì taaaa </h1>
             <div class="grid grid-cols-2 gap-4 mb-10 flex-1 content-center">
                 <button
                     class="btn btn-outline p-4 rounded-2xl text-[15px] food-opt h-full flex flex-col items-center justify-center gap-2"
@@ -208,12 +208,12 @@
                 </button>
             </div>
             <button id="btnNextScreen4" class="btn btn-primary w-full hidden" onclick="nextScreen(4, 5)">tiếp tục
-                👉</button>
+            </button>
         </div>
 
         <!-- Screen 5 -->
         <div id="screen5" class="screen">
-            <h1 class="text-xl font-bold text-gray-800 mb-8 leading-relaxed">ăn xong rồi thì mình đi đâu chơi tiếp nè 🛵
+            <h1 class="text-xl font-bold text-gray-800 mb-8 leading-relaxed">ăn xong rồi thì mình đi đâu chơi tiếp nè🛵
             </h1>
             <div class="flex flex-col gap-4 mb-10 flex-1 justify-center">
                 <button
@@ -353,7 +353,7 @@
             const nextBtn = document.getElementById('btnNextScreen2');
 
             if (!d || !m || !y) {
-                msg.textContent = "nhập đủ ngày tháng năm đi bae 🥺";
+                msg.textContent = "nhập đủ ngày tháng năm đi bae🥺";
                 msg.className = "text-[15px] font-bold text-red-500 h-6 mb-6";
                 nextBtn.classList.add('hidden');
                 return;
